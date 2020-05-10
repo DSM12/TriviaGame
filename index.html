@@ -1,25 +1,176 @@
 <!DOCTYPE html>
+<html>
 
-<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <title>Totally Trivial Trivia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <img id="northern-lights" href="https://static01.nyt.com/images/2019/02/17/travel/17Northern-Lights1/17Northern-Lights1-superJumbo.jpg">
+</head>
 
-  <head>
+<body class="text-center">
 
-    <meta charset="UTF-8">
-
-    <title>Totally Trivial Trivia</title>
-
-  </head>
-
-  <body>
-    
-    <h1>Totally Trivial Trivia!</h1>
-    <h2 id="time-remaining">Time Remaining:</h2>
-    <h2>What is the angle of the Great Pyramid of Egypt?</h2>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Totally Trivial Trivia!</h1>
+      <p class="lead btn btn-lg btn-danger" id="game-start">Start</p>
+      <div class="col-lg-4 col-lg-offset-4 text-center">
+        <p id="countdown">Time Remaining:<span id="timer"></span></p>
+      </div>
+    </main>
 
-  </body>
+
+    <div class="trivia-ques text-center">
+      <p class="quest">1. What is the slope of the Great Pyramid??</p>
+      <form class="question">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">55 degrees</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">34 degrees</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">51.5 degrees</label>
+        </div>
+      </form>
+      <br>
+      <p class="quest">2. How deep is the Mariana Trench?</p>
+      <form class="question">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">36,201 ft</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">40,000 ft</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">29,850 ft</label>
+        </div>
+      </form>
+      <br>
+      <p class="quest">3. Who sent the first email?</p>
+      <form class="question">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Bob Khan</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Ray Tomlinson</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">Steve Jobs</label>
+        </div>
+      </form>
+      <br>
+      <p class="quest">4. What is the oldest beer in the country?</p>
+      <form class="question">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Corona</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Miller High Life</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">Yengling</label>
+        </div>
+      </form>
+      <br>
+      <p class="quest">5. What was the first video gaming console made?</p>
+      <form class="question">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Sega Genesis</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Atari Pong</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <label class="form-check-label" for="inlineRadio3">Playstation</label>
+        </div>
+        <br>
+        <p class="quest">6. How many bones are in the human body?</p>
+        <form class="question">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">206</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">302</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">270</label>
+          </div>
+        </form>
+        <br>
+        <p class="quest">7. Who was the first computer programmer?</p>
+        <form class="question">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Warren Buffet</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Bill Gates</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">Ada Lovelace</label>
+          </div>
+        </form>
+        <br>
+        <p class="quest">8. North Korea and Cuba are the only places you can't buy...?</p>
+        <form class="question">
+          <label class="form-check form-check-inline text-mysize">
+            <input type="radio" name="optradio" class="optradio" value="wrong">Coca Cola
+          </label>
+          <label class="form-check form-check-inline text-mysize">
+            <input type="radio" name="optradio" class="optradio" value="correct">Nike products
+          </label>
+          <label class="form-check form-check-inline text-mysize">
+            <input type="radio" name="optradio" class="optradio" value="wrong">Apple products
+          </label>
+        </form>
+
+
+        <div>
+          <p class="lead btn btn-lg btn-danger" id="game-done">Done
+          </p>
+        </div>
+    </div>
+
+
+    <div class="results">
+      <p class="lead2" id="summary">All Done!</p>
+      <p class="lead2" id="correctScore">Correct Answers:</p>
+      <p class="lead2" id="wrongScore"></p>
+      <p class="lead2" id="unanswered"></p>
+    </div>
+
+  </div>
+
+
+
+</body>
 
 </html>
